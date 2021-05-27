@@ -150,12 +150,18 @@ main {
     cursor: pointer;
     font-weight: bold;
     color: #5a5a5a;
-    font-size: .9rem;
+    font-size: .8rem;
 }
 
 .btn:hover {
     background-color: #feefc3;
     box-shadow: 0 1px 3px #d6d6d6;
 }
+
+.btn.btn-secondary:hover {
+    background-color: #f1f3f459;
+    box-shadow: 0 1px 3px #d6d6d6;
+}
+
 
 /* Main Section - end */
