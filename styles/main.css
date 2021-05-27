@@ -85,6 +85,7 @@ nav {
 /* Main Section - start */
 main {
     grid-area: main;
+    margin-top: 10px;
 }
 
 .notes-list-wrapper {
@@ -98,4 +99,39 @@ main {
     background: aliceblue;
     margin: 10px;
 }
+
+
+
+.create-notes-wrapper{
+    display: flex;
+    justify-content: center;
+}
+
+.create-note-card {
+    width: 50%;
+    padding: 10px;
+    box-shadow: 0 1px 7px #d4d4d4;
+    border-radius: 5px;
+}
+
+.create-note-card-title textarea {
+    width: 100%;
+    height: 1.5rem;
+    font-size: 1rem;
+    border: none;
+    outline: none;
+}
+
+.create-note-card-body textarea {
+    width: 100%;
+    height: 1.5rem;
+    font-size: 1rem;
+    border: none;
+    outline: none;
+}
+
+.card-header, .card-body {
+    margin-bottom: 5px;
+}
+
 /* Main Section - end */
