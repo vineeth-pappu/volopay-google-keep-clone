@@ -1,6 +1,14 @@
 const NotesCardComponent = (note) => {
+    
+    const colorPickerChangeHandler = ({colorCode, colorName}) => {
+        newNote.color = {colorCode, colorName}
+        const noteCard = document.getElementById(`${note.id}`)
+        noteCard.style.backgroundColor = colorCode
+    }
+
+    
     return `
-        <div class="notes-card">
+        <div class="notes-card ${note.color.colorName}" id="${note.id}">
             <div class="notes-card-title">
                 ${note.title}
             </div>
@@ -12,19 +20,7 @@ const NotesCardComponent = (note) => {
             </div>
             <div class="card-footer notes-card-footer">
                 <div class="d-flex">
-                    <div class="color-picker">
-                        <button class="btn btn-secondary">Color</button>
-                        <div class="color-picker-options">
-                            <div class="color bg-white"></div>
-                            <div class="color bg-red"></div>
-                            <div class="color bg-orange"></div>
-                            <div class="color bg-yellow"></div>
-                            <div class="color bg-darkblue"></div>
-                            <div class="color bg-blue"></div>
-                            <div class="color bg-teal"></div>
-                            <div class="color bg-green"></div>
-                        </div>
-                    </div>
+                    ${ColorPickerComponent(colorPickerChangeHandler)}
                     <button class="btn btn-secondary">Label</button>
                 </div>
                 <div>

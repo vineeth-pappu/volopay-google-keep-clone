@@ -1,4 +1,6 @@
-var notes = [
+var notes = []
+
+var notes_mock = [
     {
         title: "title",
         body: "sample body",
