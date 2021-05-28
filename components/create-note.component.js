@@ -18,9 +18,7 @@ const CreateNoteComponent = () => {
             notesListWapper.innerHTML += newNoteCard;
         }
         
-        const inputChangeHandler = e => {
-            newNote[e.target.name] = e.target.value
-        }
+        const inputChangeHandler = e => newNote[e.target.name] = e.target.value
 
         createNoteTitle.addEventListener('change', inputChangeHandler);
         createNoteBody.addEventListener('change', inputChangeHandler);
