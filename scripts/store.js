@@ -1,32 +1,3 @@
-var notes = []
+const savedNotes = JSON.parse(localStorage.getItem('notes'))
 
-var notes_mock = [
-    {
-        title: "title",
-        body: "sample body",
-        color: "#ccc",
-        labels: ["lab 1", "lab 2"],
-        author: "user_1"
-    },
-    {
-        title: "title",
-        body: "sample body",
-        color: "#ccc",
-        labels: ["lab 1", "lab 2"],
-        author: "user_1"
-    },
-    {
-        title: "title",
-        body: "sample body",
-        color: "#ccc",
-        labels: ["lab 1", "lab 2"],
-        author: "user_1"
-    },
-    {
-        title: "title",
-        body: "sample body",
-        color: "#ccc",
-        labels: ["lab 1", "lab 2"],
-        author: "user_1"
-    },
-]
+var notes = savedNotes || []
