@@ -10,10 +10,12 @@ Demo Link: https://vineeth-pappu.github.io/volopay-google-keep-clone/
  - Search Notes
  - Notes are preserved even if you refresh or close the tab
 
+## App Screenshot
+![Google Keep Clone UI](https://user-images.githubusercontent.com/17177113/120024110-57cb1680-c00c-11eb-8b64-bcf55b842bf7.png)
+
+
 ## Steps to run Locally
 
-- Run index.html from your servers folder
-
-# or
-
-- Use VSCode Live Server Extention to run index.html
+Run index.html from your servers folder
+-- or --
+Use VSCode Live Server Extention to run index.html
