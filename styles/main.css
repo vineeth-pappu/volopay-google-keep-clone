@@ -1,10 +1,10 @@
-html, body {
+html,
+body {
     margin: 0;
     padding: 0;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     color: #202124;
 }
-
 
 .layout-grid-container {
     height: 100vh;
@@ -12,50 +12,65 @@ html, body {
     grid-template-columns: max-content 1fr;
     grid-template-rows: max-content 1fr;
     gap: 0px 0px;
-    grid-template-areas:
-      "header header"
-      "nav main";
+    grid-template-areas: "header header" "nav main";
 }
 
 
 /* Helpers */
+
 .d-flex {
     display: flex;
 }
+
 .bg-white {
     background-color: #fff;
 }
+
 .bg-red {
     background-color: #f28b82;
 }
+
 .bg-orange {
     background-color: #fbbc04;
 }
+
 .bg-yellow {
     background-color: #fff475;
 }
+
 .bg-darkblue {
     background-color: #aecbfa;
 }
+
 .bg-blue {
     background-color: #cbf0f8;
 }
+
 .bg-teal {
     background-color: #a7ffeb;
 }
+
 .bg-green {
     background-color: #ccff90;
 }
+
 .bg-purple {
     background-color: #d7aefb;
 }
 
+.line-clamp {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
 
 
 /* Helpers */
 
 
 /* Header - start */
+
 header {
     grid-area: header;
     display: flex;
@@ -65,6 +80,7 @@ header {
     border-bottom: 1px solid #dadce0;
     padding: 10px;
 }
+
 .logo {
     font-size: 1.4rem;
     font-weight: 600;
@@ -85,10 +101,13 @@ header {
     outline: none;
     font-size: 0.9rem;
 }
+
+
 /* Header - end */
 
 
 /* Side Nav Menu - start */
+
 nav {
     grid-area: nav;
 }
@@ -117,10 +136,13 @@ nav {
 .side-menu--item.active {
     background-color: #feefc3;
 }
+
+
 /* Side Nav Menu - end */
 
 
 /* Main Section - start */
+
 main {
     grid-area: main;
     margin-top: 10px;
@@ -133,16 +155,25 @@ main {
 
 .notes-card {
     width: 300px;
-    height: 300px;
-    background: aliceblue;
+    height: max-content;
+    /* display: flex;
+    flex-direction: column;
+    justify-content: space-between; */
+    background: #fff;
     margin: 10px;
+    padding: 1rem;
+    border-radius: 7px;
+    box-shadow: 0 0 5px #d6d6d6;
 }
 
+.notes-card:hover {
+    box-shadow: 0 1px 10px #d6d6d6;
+}
 
-
-.create-notes-wrapper{
+.create-notes-wrapper {
     display: flex;
     justify-content: center;
+    margin: 2rem auto;
 }
 
 .create-note-card {
@@ -168,7 +199,8 @@ main {
     outline: none;
 }
 
-.card-header, .card-body {
+.card-header,
+.card-body {
     margin-bottom: 5px;
 }
 
@@ -181,6 +213,7 @@ main {
 
 
 /* App Button */
+
 .btn {
     border: none;
     outline: none;
@@ -202,10 +235,17 @@ main {
     background-color: #f1f3f459;
     box-shadow: 0 1px 3px #d6d6d6;
 }
+
+.btn.btn-danger:hover {
+    background-color: #ffb2c1;
+}
+
+
 /* App Button */
 
 
 /* Color Picker */
+
 .color-picker {
     position: relative;
     margin-right: 2rem;
@@ -223,6 +263,7 @@ main {
     border: 1px solid transparent;
     cursor: pointer;
 }
+
 .color.bg-white {
     border: 1px solid #333;
 }
@@ -243,7 +284,38 @@ main {
     box-shadow: 0 1px 5px #d6d6d6;
     border-radius: 7px;
 }
+
+
 /* Color Picker */
+
+
+/* notes display card */
+
+.notes-card-title {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.notes-card-body {
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+}
+
+.label {
+    padding: 5px 10px;
+    background: rgb(0 0 0 / 15%);
+    display: inline-flex;
+    align-items: center;
+    border-radius: 15px;
+    font-size: 0.9rem;
+}
+
+.notes-card-footer {
+    margin-top: 2rem;
+}
+
+
+/* notes display card */
 
 
 /* Main Section - end */
