@@ -28,39 +28,6 @@
 
         <main>
             <section class="create-notes-wrapper" id="create-notes-wrapper">
-                <div class="create-note-card">
-                    <div class="card-header">
-                        <div class="create-note-card-title">
-                            <textarea name="create-note-title" id="create-note-title" placeholder="Title"></textarea>
-                        </div>
-                    </div>
-                    <div class="card-body">
-                        <div class="create-note-card-body">
-                            <textarea name="create-note-body" id="create-note-body" placeholder="Take a note..."></textarea>
-                        </div>
-                    </div>
-                    <div class="card-footer">
-                        <div class="d-flex">
-                            <div class="color-picker">
-                                <button class="btn btn-secondary">Color</button>
-                                <div class="color-picker-options">
-                                    <div class="color bg-white"></div>
-                                    <div class="color bg-red"></div>
-                                    <div class="color bg-orange"></div>
-                                    <div class="color bg-yellow"></div>
-                                    <div class="color bg-darkblue"></div>
-                                    <div class="color bg-blue"></div>
-                                    <div class="color bg-teal"></div>
-                                    <div class="color bg-green"></div>
-                                </div>
-                            </div>
-                            <button class="btn btn-secondary">Label</button>
-                        </div>
-                        <div>
-                            <button class="btn" id="create-note-btn">Create</button>
-                        </div>
-                    </div>
-                </div>
             </section>
 
             <section class="notes-list-wrapper" id="notes-list-wrapper">
@@ -297,6 +264,7 @@
 
     <script src="./scripts/store.js"></script>
     <script src="./components/label.component.js"></script>
+    <script src="./components/color-picker.component.js"></script>
     <script src="./components/notes-card.component.js"></script>
     <script src="./components/create-note.component.js"></script>
     <script src="./scripts/main.js"></script>
