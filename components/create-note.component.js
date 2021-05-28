@@ -1,21 +1,38 @@
+const emptyNote = {
+    id: "",
+    title: "",
+    body: "",
+    color: {},
+    labels: [],
+    author: ""
+}
+
+let newNote = { ...emptyNote }
+
 const CreateNoteComponent = () => {
-    
-    const newNote = {
-        title: "",
-        body: "",
-        color: "#ccc",
-        labels: ["lab 1", "lab 2"],
-        author: "user_1"
-    }
     
     const init = () => {
         const createNoteBtn = document.getElementById('create-note-btn');
         const createNoteTitle = document.getElementById('create-note-title');
         const createNoteBody = document.getElementById('create-note-body');
         
+        const resetCreateNoteInputValues = () => {
+            createNoteBody.value = createNoteTitle.value = ""
+            const createNoteCard = document.getElementById('create-note-card')
+            createNoteCard.style.backgroundColor = "#fff"
+            newNote = {...emptyNote}
+        }
+        
         const createNote = (e) => {
+            if (!createNoteBody.value && !createNoteTitle.value) return;
+            
+            newNote.id = `note-${notes.length + 1}`;
+            console.log('create new note', newNote);
+            notes.push(newNote);
             const newNoteCard = NotesCardComponent(newNote);
             notesListWapper.innerHTML += newNoteCard;
+            
+            resetCreateNoteInputValues()
         }
         
         const inputChangeHandler = e => newNote[e.target.name] = e.target.value
@@ -24,15 +41,16 @@ const CreateNoteComponent = () => {
         createNoteBody.addEventListener('change', inputChangeHandler);
         createNoteBtn.addEventListener('click', createNote);
     }
-    
-    const render = id => {
-        document.getElementById(id).innerHTML = HTML;
-        init()
+
+    const colorPickerChangeHandler = ({colorCode, colorName}) => {
+        newNote.color = {colorCode, colorName}
+        const createNoteCard = document.getElementById('create-note-card')
+        createNoteCard.style.backgroundColor = colorCode
     }
 
     
     const HTML = `
-        <div class="create-note-card">
+        <div class="create-note-card" id="create-note-card">
             <div class="card-header">
                 <div class="create-note-card-title">
                     <textarea name="title" id="create-note-title" placeholder="Title"></textarea>
@@ -45,19 +63,7 @@ const CreateNoteComponent = () => {
             </div>
             <div class="card-footer">
                 <div class="d-flex">
-                    <div class="color-picker">
-                        <button class="btn btn-secondary">Color</button>
-                        <div class="color-picker-options">
-                            <div class="color bg-white"></div>
-                            <div class="color bg-red"></div>
-                            <div class="color bg-orange"></div>
-                            <div class="color bg-yellow"></div>
-                            <div class="color bg-darkblue"></div>
-                            <div class="color bg-blue"></div>
-                            <div class="color bg-teal"></div>
-                            <div class="color bg-green"></div>
-                        </div>
-                    </div>
+                    ${ColorPickerComponent(colorPickerChangeHandler)}
                     <button class="btn btn-secondary">Label</button>
                 </div>
                 <div>
@@ -67,6 +73,11 @@ const CreateNoteComponent = () => {
         </div>
     
     `
+        
+    const render = id => {
+        document.getElementById(id).innerHTML = HTML;
+        init()
+    }
     
     return {
         render
