@@ -1,3 +1,10 @@
+function deleteNote(e) {
+    const { noteId } = e.target.dataset
+    const noteCard = document.getElementById(noteId);
+    noteCard.remove();
+    notes = notes.filter(n => n.id != noteId)
+}
+
 const NotesCardComponent = (note) => {
     
     const colorPickerChangeHandler = ({colorCode, colorName}) => {
@@ -24,7 +31,9 @@ const NotesCardComponent = (note) => {
                     <button class="btn btn-secondary">Label</button>
                 </div>
                 <div>
-                    <button class="btn btn-danger">Delete</button>
+                    <button class="btn btn-danger" 
+                        data-note-id="${note.id}"
+                        onclick="deleteNote(event)">Delete</button>
                 </div>
             </div>
         </div>
